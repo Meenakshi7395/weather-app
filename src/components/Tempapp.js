@@ -54,7 +54,7 @@ const Tempapp = () => {
 
     useEffect ( ()=>{
         const fetchApi = async() =>{
-            const url =`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=8652aa0bac16420206c6238818714c67`;
+            const url =`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=8652aa0bac16420206c6238818714c67&units=metric`;
             const response = await fetch(url);
             const resJson = await response.json();
             //console.log(resJson)
@@ -68,8 +68,8 @@ const Tempapp = () => {
             }
             
         };
-        //fetchApi();
-        setCity(testData)
+        fetchApi();
+       // setCity(testData)
     },[search])
     return(
         <>
@@ -79,11 +79,6 @@ const Tempapp = () => {
                         setSearch(event.target.value)
                     }}/>
                 </div>
-                
-                
-                
-               
-                
                 <div className="info">
 
                 {city == null ? 
@@ -99,16 +94,12 @@ const Tempapp = () => {
                     <h1 className="temp">
                        {city.main.temp} &deg;C
                     </h1>
-                    <h3 className="tempmin_max">Min : 5.25 cel | Max : 5.25 cel</h3>
+                    <h3 className="tempmin_max">Min : {city.main.temp_min}&deg;C | Max : {city.main.temp_max}&deg;C </h3>
                 </>
 
                 }
-
                 </div>
                 
-                
-              
-
                 <div className="wave -one"></div>
                 <div className="wave -two"></div>
                 <div className="wave -three"></div>

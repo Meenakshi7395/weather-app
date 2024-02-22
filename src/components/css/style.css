@@ -5,7 +5,8 @@
 }
 
 body{
-    background: #f3f2ef;
+    background: #ffc0cb;
+    /* background-image: url("../../images/img.jpg"); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +88,7 @@ html{
 
 .info{
     text-align: center;
-    margin-top: 20%;
+    margin-top: 13%;
 }
 
 .temp{
@@ -102,6 +103,7 @@ html{
 
 .location{
     font-weight: 900;
+
 }
 
 .inputData{
